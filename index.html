@@ -10,30 +10,40 @@
     <title>Pali e Dispari</title>
 </head>
 <body>
-    <h1>Pali e Dispari</h1>
-    <section id="first_section" class="py-4">
-        <h2>Esercizio 1</h2>
-        <input type="text" id="es1_input" placeholder="Inserisci una parola">
-        <button id="es1_btn">Verifica</button>
-        <p id="es1_text" class="py-3"></p>
+    
+    <section id="first_section" class="py-4 ">
+        <h1 class="text-center text-white mb-5"><span class="first-half">Pali</span> & <span class="second-half">Dispari</span></h1>
+        <div class="container-sm">
+            <h2 class="text-white">Esercizio 1</h2>
+            <h3 class="text-black pb-3">Verifica se una parola è Palindroma</h3>
+            <div class="input-section d-flex align-items-center gap-3">
+                <input type="text" id="es1_input" placeholder="Inserisci una parola">
+                <button id="es1_btn" class="btn">Verifica</button>
+                <div class="alert_msg"></div>
+            </div>
+            <p id="es1_text" class="py-3 text-white fs-5"></p>
+        </div>
     </section>
 
-    <section id="second_section" class="py-4">
-        <h2>Esercizio 2</h2>
-        <label for="pari/dispari">Scegli:</label>
-        <select id="es2_select" name="pari/dispari" id="pari/dispari" class="ms-2">
-            <option value="pari">Pari</option>
-            <option value="dispari">Dispari</option>
-        </select>
-        <br>
-        <br>
-        <input type="number" id="es2_input" class="mt-3" placeholder="inserisci un numero da 1 a 5">
-        <button id="es2_button">Gioca!</button>
-        <br>
-        <span id="user_roll" class="me-3"></span>
-        <span id="computer_roll"></span>
-        <p id="es2_somma" class="py-2"></p>
-        <h3 id="es2_result"></h3>
+    <section id="second_section" class="py-5">
+        <div class="container-sm">
+            <h2>Esercizio 2</h2>
+            <div class="even-odd_form">
+                <label for="pari/dispari" class="fs-3 pink_txt">Scegli:</label>
+                <select id="es2_select" name="pari/dispari" id="pari/dispari" class="ms-2 fs-4">
+                    <option value="pari">Pari</option>
+                    <option value="dispari">Dispari</option>
+                </select>
+            </div>
+            <div class="number_gen_section">
+                <input type="number" id="es2_input" class="mt-3" placeholder="inserisci un numero da 1 a 5">
+                <button id="es2_button">Gioca!</button>
+            </div>
+            <span id="user_roll" class="me-3"></span>
+            <span id="computer_roll"></span>
+            <p id="es2_somma" class="py-2"></p>
+            <h3 id="es2_result"></h3>
+        </div>
     </section>
     <script src="js/script.js"></script>
 </body>
