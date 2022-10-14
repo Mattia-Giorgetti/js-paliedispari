@@ -16,6 +16,7 @@ const eseguiVerifica = function(){
         return 
     } 
     removeFirstNotification();
+    
     if(parolaInserita === parolaRovesciata){
         testoES1.innerHTML = `<span class="black_txt fs-4">${parolaInserita}</span>  è una parola palindroma!`;
     } else {
@@ -30,39 +31,33 @@ const btnPlay = document.getElementById('es2_button');
 const risultatoES2 = document.getElementById('es2_result');
 let numbersInput = document.getElementById ('es2_input');
 let mySelect = document.getElementById('es2_select');
-
 let somma = 0;
 const playGame = function(){
    
     const sceltaUtentePD = mySelect.value;
     const numeroSceltoUtente = parseInt(numbersInput.value);
     if(numeroSceltoUtente < 1 || numeroSceltoUtente > 5){
-      risultatoES2.innerHTML = 'Il numero deve essere compreso tra 1 e 5!!';
+      risultatoES2.innerHTML = '<span class="text-danger">Il numero deve essere compreso tra 1 e 5!!</span';
       document.getElementById('user_roll').innerHTML = '';
       document.getElementById('computer_roll').innerHTML = '';
       document.getElementById('es2_somma').innerHTML = ''; 
-
-    } else {
-        document.getElementById('user_roll').innerHTML = `Hai scelto: ${numeroSceltoUtente}`;
-    
+      removeFirstNotification();
+      return
+    }
+    else {
+    document.getElementById('user_roll').innerHTML = `Hai scelto: <span class="blue_txt fs-4">${numeroSceltoUtente}</span>`;
     const numeroRandomComputer = randomNumber(1, 5);
-    document.getElementById('computer_roll').innerHTML = `Computer ha scelto: ${numeroRandomComputer}`;
-
+    document.getElementById('computer_roll').innerHTML = `Computer ha scelto: <span class="blue_txt fs-4">${numeroRandomComputer}</span>`;
     somma = numeroSceltoUtente+numeroRandomComputer;
-    document.getElementById('es2_somma').innerHTML = `La somma dei lanci è: ${somma}`; 
+    document.getElementById('es2_somma').innerHTML = `La somma dei lanci è:  <span class="pink_txt fs-4">${somma}</span>`;
     isEven(somma);
-    //console.log(isEven(somma));
     if(sceltaUtentePD == 'pari'  && isEven(somma) == true){
-        //console.log('pari:hai vinto');
         risultatoES2.innerHTML = `Pari : Hai Vinto!`
     } else if(sceltaUtentePD == 'dispari' && isEven(somma) == false){
-        //console.log('dispari:hai vinto');
         risultatoES2.innerHTML = `Dispari : Hai Vinto!`
     } else {
-        //console.log('hai perso');
         risultatoES2.innerHTML = `Hai Perso!`
     }
     }
-
 }
 btnPlay.addEventListener('click', playGame);
