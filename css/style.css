@@ -4,3 +4,23 @@
 h2 {
     margin-bottom: 2rem;
 }
+.first-half, .second-half {
+    color: black;
+}
+#first_section {
+    background-color: dodgerblue;
+    height: 500px;
+}
+#second_section {
+    height: 600px;
+}
+button#es1_btn {
+    background-color: rgb(226, 16, 191);
+    color: white;
+} 
+.pink_txt {
+    color: rgb(226, 16, 191);
+}
+.black_txt {
+    color: black;
+}

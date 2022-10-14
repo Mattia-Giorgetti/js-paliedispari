@@ -11,15 +11,15 @@ const eseguiVerifica = function(){
         inputUtenteHTML.innerHTML = '';
         const myAlert = document.createElement('div');
         myAlert.className = 'alert alert-danger';
-        myAlert.innerHTML = 'Puoi inserire solo parole!';
+        myAlert.innerHTML = 'Prima devi inserire una parola!';
         testoES1.append(myAlert);
-        return
+        return 
     } 
     removeFirstNotification();
     if(parolaInserita === parolaRovesciata){
-        testoES1.innerHTML = `${parolaInserita} è una parola palindroma!`;
+        testoES1.innerHTML = `<span class="black_txt fs-4">${parolaInserita}</span>  è una parola palindroma!`;
     } else {
-        testoES1.innerHTML = `Purtroppo ${parolaInserita} non è una parola palindroma!`;
+        testoES1.innerHTML = `Purtroppo <span class="black_txt fs-4">${parolaInserita}</span> non è una parola palindroma!`;
     } 
 } 
 btnVerifica.addEventListener('click', eseguiVerifica);
@@ -33,11 +33,18 @@ let mySelect = document.getElementById('es2_select');
 
 let somma = 0;
 const playGame = function(){
-    
+   
     const sceltaUtentePD = mySelect.value;
     const numeroSceltoUtente = parseInt(numbersInput.value);
-    document.getElementById('user_roll').innerHTML = `Hai scelto: ${numeroSceltoUtente}`;
+    if(numeroSceltoUtente < 1 || numeroSceltoUtente > 5){
+      risultatoES2.innerHTML = 'Il numero deve essere compreso tra 1 e 5!!';
+      document.getElementById('user_roll').innerHTML = '';
+      document.getElementById('computer_roll').innerHTML = '';
+      document.getElementById('es2_somma').innerHTML = ''; 
 
+    } else {
+        document.getElementById('user_roll').innerHTML = `Hai scelto: ${numeroSceltoUtente}`;
+    
     const numeroRandomComputer = randomNumber(1, 5);
     document.getElementById('computer_roll').innerHTML = `Computer ha scelto: ${numeroRandomComputer}`;
 
@@ -55,5 +62,29 @@ const playGame = function(){
         //console.log('hai perso');
         risultatoES2.innerHTML = `Hai Perso!`
     }
+
+
+
+
+    }
+    // document.getElementById('user_roll').innerHTML = `Hai scelto: ${numeroSceltoUtente}`;
+    
+    // const numeroRandomComputer = randomNumber(1, 5);
+    // document.getElementById('computer_roll').innerHTML = `Computer ha scelto: ${numeroRandomComputer}`;
+
+    // somma = numeroSceltoUtente+numeroRandomComputer;
+    // document.getElementById('es2_somma').innerHTML = `La somma dei lanci è: ${somma}`; 
+    // isEven(somma);
+    // //console.log(isEven(somma));
+    // if(sceltaUtentePD == 'pari'  && isEven(somma) == true){
+    //     //console.log('pari:hai vinto');
+    //     risultatoES2.innerHTML = `Pari : Hai Vinto!`
+    // } else if(sceltaUtentePD == 'dispari' && isEven(somma) == false){
+    //     //console.log('dispari:hai vinto');
+    //     risultatoES2.innerHTML = `Dispari : Hai Vinto!`
+    // } else {
+    //     //console.log('hai perso');
+    //     risultatoES2.innerHTML = `Hai Perso!`
+    // }
 }
 btnPlay.addEventListener('click', playGame);
