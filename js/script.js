@@ -62,29 +62,7 @@ const playGame = function(){
         //console.log('hai perso');
         risultatoES2.innerHTML = `Hai Perso!`
     }
-
-
-
-
     }
-    // document.getElementById('user_roll').innerHTML = `Hai scelto: ${numeroSceltoUtente}`;
-    
-    // const numeroRandomComputer = randomNumber(1, 5);
-    // document.getElementById('computer_roll').innerHTML = `Computer ha scelto: ${numeroRandomComputer}`;
 
-    // somma = numeroSceltoUtente+numeroRandomComputer;
-    // document.getElementById('es2_somma').innerHTML = `La somma dei lanci è: ${somma}`; 
-    // isEven(somma);
-    // //console.log(isEven(somma));
-    // if(sceltaUtentePD == 'pari'  && isEven(somma) == true){
-    //     //console.log('pari:hai vinto');
-    //     risultatoES2.innerHTML = `Pari : Hai Vinto!`
-    // } else if(sceltaUtentePD == 'dispari' && isEven(somma) == false){
-    //     //console.log('dispari:hai vinto');
-    //     risultatoES2.innerHTML = `Dispari : Hai Vinto!`
-    // } else {
-    //     //console.log('hai perso');
-    //     risultatoES2.innerHTML = `Hai Perso!`
-    // }
 }
 btnPlay.addEventListener('click', playGame);
