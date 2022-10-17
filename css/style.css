@@ -38,6 +38,7 @@ button#es1_btn:hover, button#es2_button:hover {
     background-color: dodgerblue;
     background-image: linear-gradient(45deg,dodgerblue, rgb(226,16,191));
     background-size: 230px;
+    background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 

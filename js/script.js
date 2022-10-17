@@ -36,7 +36,7 @@ const playGame = function(){
    
     const sceltaUtentePD = mySelect.value;
     const numeroSceltoUtente = parseInt(numbersInput.value);
-    if(numeroSceltoUtente < 1 || numeroSceltoUtente > 5){
+    if(isNaN(numeroSceltoUtente) || numeroSceltoUtente < 1 || numeroSceltoUtente > 5){
       risultatoES2.innerHTML = '<span class="text-danger">Il numero deve essere compreso tra 1 e 5!!</span';
       document.getElementById('user_roll').innerHTML = '';
       document.getElementById('computer_roll').innerHTML = '';
